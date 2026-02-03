@@ -57,7 +57,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen -mt-16">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 -mt-16">
       {yesPressed ? (
         <>
           <img src="https://gifdb.com/images/high/animated-bear-kiss-enngnq0gm2r405bt.webp" />
@@ -73,9 +73,9 @@ export default function Page() {
             {/* Will you be my Valentine? */}
             Will you be my Valentine?
           </h1>
-          <div className="text-center space-y-5">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <button
-              className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4`}
+              className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded`}
               style={{ fontSize: yesButtonSize }}
               onClick={() => setYesPressed(true)}
             >
@@ -85,6 +85,7 @@ export default function Page() {
             <button
               onClick={handleNoClick}
               onMouseEnter={moveNoButton}
+              onTouchStart={moveNoButton}
               className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
               style={noButtonPosition ? { position: 'absolute', top: noButtonPosition.top, left: noButtonPosition.left } : undefined}
             >
